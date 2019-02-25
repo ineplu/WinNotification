@@ -155,7 +155,7 @@ namespace NotificationIcon
             XmlNodeList xnList = null;
             XmlDocument xml = geturl.Get_HttpRequest(getPathUrl);
             xnList = xml.SelectNodes("/Root"); //접근할 노드
-            if(xnList[0].SelectNodes("Error") == null)
+            if(xnList[0].SelectNodes("Error").Count < 1)
             {
                 bbsUrl = domain + "/" + xnList[0].SelectNodes("oriDBPath")[0].InnerText + "/0/" + xnList[0].SelectNodes("oriUNID")[0].InnerText + "/Body?OpenField";
             } else
